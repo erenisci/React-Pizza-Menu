@@ -58,7 +58,6 @@ function App() {
 }
 
 function Header() {
-  // const style = { color: 'red', fontSize: '48px', textTransform: 'uppercase' };
   const style = {};
   return (
     <header className='header'>
@@ -69,7 +68,6 @@ function Header() {
 
 function Menu() {
   const pizzas = pizzaData;
-  // const pizzas = [];
   const numPizzas = pizzas.length;
 
   return (
@@ -78,8 +76,8 @@ function Menu() {
       {numPizzas > 0 ? (
         <>
           <p>
-            Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven,
-            all organic, all delicious.
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
           </p>
           <ul className='pizzas'>
             {pizzaData.map(pizza => (
@@ -93,27 +91,11 @@ function Menu() {
       ) : (
         <p>We're still working on our menu. Please come back later :)</p>
       )}
-      {/* <Pizza
-        name='Pizza Spinaci'
-        ingredients='Tomato, mozarella, spinach, and ricotta cheese'
-        photoName='pizzas/spinaci.jpg'
-        price={10}
-      />
-      <Pizza
-        name='Pizza Funghi'
-        ingredients='Tomato, mushrooms'
-        photoName='pizzas/funghi.jpg'
-        price={12}
-      /> */}
     </main>
   );
 }
 
 function Pizza({ pizzaObj }) {
-  console.log(pizzaObj);
-
-  // if (pizzaObj.soldOut) return null;
-
   return (
     <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ''}`}>
       <img
@@ -134,10 +116,6 @@ function Footer() {
   const openHour = 10;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
-
-  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
-  // else alert("Sorry we're closed!");
 
   return (
     <footer className='footer'>
@@ -153,15 +131,14 @@ function Footer() {
       )}
     </footer>
   );
-
-  // return React.createElement('footer', null, "We're currently open");
 }
 
 function Order({ openHour, closeHour }) {
   return (
     <div className='order'>
       <p>
-        We're open from {openHour}:00 to {closeHour}:00. Come visit us or order online.
+        We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
+        online.
       </p>
       <button className='btn'>Order</button>
     </div>
